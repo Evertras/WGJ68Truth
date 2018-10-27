@@ -8,11 +8,22 @@ public class MazeWall : MonoBehaviour {
 
     public bool ColorizePassable = false;
 
+    public bool Passable {
+        get { return _passable; }
+        set {
+            _passable = value;
+            GetComponent<BoxCollider>().enabled = !_passable;
+
+            Colorize();
+        }
+    }
+
+    private bool _passable;
+
     private float Probability;
     private Color WallColor;
     private Renderer Renderer;
     private MaterialPropertyBlock PropBlock;
-    private bool IsPassable;
 
 	// Use this for initialization
 	void Start () {
@@ -29,30 +40,20 @@ public class MazeWall : MonoBehaviour {
         Renderer.SetPropertyBlock(PropBlock);
 	}
 
-    public void ForcePassable(bool passable)
-    {
-        IsPassable = passable;
-
-        GetComponent<BoxCollider>().enabled = !IsPassable;
-    }
-
     public void SetProbability(float probability)
     {
         Probability = probability;
 
-        if (Random.Range(0.0f, 1.0f) <= Probability)
-        {
-            IsPassable = true;
-            GetComponent<BoxCollider>().enabled = false;
-        }
-        else
-        {
-            IsPassable = false;
-        }
+        Passable = Random.Range(0.0f, 1.0f) < probability;
 
+        Colorize();
+    }
+
+    private void Colorize()
+    {
         if (ColorizePassable)
         {
-            if (!IsPassable)
+            if (!_passable)
             {
                 WallColor = new Color(1.0f, 0.0f, 0.0f);
             }

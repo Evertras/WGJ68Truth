@@ -438,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wall: {fileID: 1467891770305122, guid: a1287a9f7195fc5459438925a563aa42, type: 2}
   Pillar: {fileID: 1206513479203584, guid: bf05aef312f518b49a4a7e5d1bbd4097, type: 2}
+  Goal: {fileID: 1206858714358026, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
   Width: 5
   Height: 5
   WallHeight: 1
@@ -455,48 +456,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1382752906
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5bd9af97d3e7a4947b8968c2b4dcea15, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1509129200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1159183690734496, guid: c7a8ed0324ad4444e873ea897bf828b4,

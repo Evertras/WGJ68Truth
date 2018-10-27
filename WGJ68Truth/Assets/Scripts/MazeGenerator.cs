@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeGenerator : MonoBehaviour {
+public class MazeGenerator : MonoBehaviour
+{
     public GameObject Wall;
     public GameObject Pillar;
     public GameObject Goal;
@@ -16,13 +17,16 @@ public class MazeGenerator : MonoBehaviour {
     private float WallLength;
     private Vector3 Offset;
 
-	private void Start () {
+    private void Start()
+    {
         WallLength = CellSize - 3.0f;
         Offset = new Vector3(-CellSize * 0.5f, 0.0f, -CellSize * 0.5f);
 
-        for (int x = 0; x < Width; ++x)
+        var edges = KruskalMaze.Generate(Width, Height);
+
+        for (int x = 0; x <= Width; ++x)
         {
-            for (int z = 0; z < Height; ++z)
+            for (int z = 0; z <= Height; ++z)
             {
                 var pillar = Instantiate(
                     Pillar,
@@ -35,29 +39,52 @@ public class MazeGenerator : MonoBehaviour {
 
                 pillar.transform.localScale = new Vector3(1.0f, WallHeight, 1.0f);
 
-                if (x != 0)
+                if ((z == 0 || z == Height) && x != 0)
                 {
-                    SpawnWallLeft(x, z);
+                    var wall = SpawnWallBottom(x, z);
+
+                    wall.Passable = false;
+                    wall.SetProbability(0.0f);
                 }
 
-                if (z != 0)
+                if ((x == 0 || x == Width) && z != 0)
                 {
-                    SpawnWallBottom(x, z);
+                    var wall = SpawnWallLeft(x, z);
+                    wall.Passable = false;
+                    wall.SetProbability(0.0f);
                 }
             }
+        }
+
+        foreach (var pair in edges)
+        {
+            var edge = pair.Key;
+            var passable = pair.Value;
+            MazeWall wall;
+
+            if (edge.A.X == edge.B.X)
+            {
+                wall = SpawnWallBottom(edge.A.X + 1, edge.A.Y + 1);
+            }
+            else
+            {
+                wall = SpawnWallLeft(edge.A.X + 1, edge.A.Y + 1);
+            }
+
+            wall.Passable = passable;
         }
 
         Instantiate(
             Goal,
             new Vector3(
-                CellSize * (Width - 2),
+                CellSize * (Width - 1),
                 1.0f,
-                CellSize * (Height - 2)
+                CellSize * (Height - 1)
             ),
             Quaternion.identity);
-	}
+    }
 
-    private void SpawnWallBottom(int x, int z)
+    private MazeWall SpawnWallLeft(int x, int z)
     {
         var wall = Instantiate(
             Wall,
@@ -70,17 +97,10 @@ public class MazeGenerator : MonoBehaviour {
 
         wall.transform.localScale = new Vector3(1.0f, WallHeight, WallLength);
 
-        if (x == 0 || x == Width - 1)
-        {
-            wall.GetComponent<MazeWall>().SetProbability(0.0f);
-        }
-        else
-        {
-            wall.GetComponent<MazeWall>().SetProbability(Random.Range(0.5f, 1.0f));
-        }
+        return wall.GetComponent<MazeWall>();
     }
 
-    private void SpawnWallLeft(int x, int z)
+    private MazeWall SpawnWallBottom(int x, int z)
     {
         var wall = Instantiate(
             Wall,
@@ -93,18 +113,6 @@ public class MazeGenerator : MonoBehaviour {
 
         wall.transform.localScale = new Vector3(WallLength, WallHeight, 1.0f);
 
-        if (z == 0 || z == Height - 1)
-        {
-            wall.GetComponent<MazeWall>().SetProbability(0.0f);
-        }
-        else
-        {
-            wall.GetComponent<MazeWall>().SetProbability(Random.Range(0.5f, 1.0f));
-        }
+        return wall.GetComponent<MazeWall>();
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }
