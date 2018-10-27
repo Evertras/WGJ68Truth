@@ -72,6 +72,7 @@ public class MazeGenerator : MonoBehaviour
             }
 
             wall.Passable = passable;
+            wall.SetProbability(Probability(passable));
         }
 
         Instantiate(
@@ -82,6 +83,22 @@ public class MazeGenerator : MonoBehaviour
                 CellSize * (Height - 1)
             ),
             Quaternion.identity);
+    }
+
+    private float Probability(bool passable)
+    {
+        float prob =
+                Random.Range(0.0f, 1.0f)
+                * Random.Range(0.0f, 0.8f);
+
+        prob = prob + 0.1f;
+
+        if (passable)
+        {
+            prob = 1.0f - prob;
+        }
+
+        return prob;
     }
 
     private MazeWall SpawnWallLeft(int x, int z)

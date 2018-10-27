@@ -14,7 +14,10 @@ public class MazeWall : MonoBehaviour {
             _passable = value;
             GetComponent<BoxCollider>().enabled = !_passable;
 
-            Colorize();
+            if (ColorizePassable)
+            {
+                Colorize();
+            }
         }
     }
 
@@ -44,8 +47,6 @@ public class MazeWall : MonoBehaviour {
     {
         Probability = probability;
 
-        Passable = Random.Range(0.0f, 1.0f) < probability;
-
         Colorize();
     }
 
@@ -64,7 +65,7 @@ public class MazeWall : MonoBehaviour {
         }
         else
         {
-            WallColor = new Color(1.0f - Probability, Probability, 0.0f);
+            WallColor = new Color(Probability, Probability, Probability);
         }
     }
 }
