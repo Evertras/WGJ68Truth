@@ -15,9 +15,7 @@ public class MazeGenerator : MonoBehaviour {
     private float WallLength;
     private Vector3 Offset;
 
-
-	// Use this for initialization
-	void Start () {
+	private void Start () {
         WallLength = CellSize - 3.0f;
         Offset = new Vector3(-CellSize * 0.5f, 0.0f, -CellSize * 0.5f);
 

@@ -6,6 +6,8 @@ public class MazeWall : MonoBehaviour {
 
     public Material Material;
 
+    public bool ColorizePassable = false;
+
     private float Probability;
     private Color WallColor;
     private Renderer Renderer;
@@ -37,7 +39,6 @@ public class MazeWall : MonoBehaviour {
     public void SetProbability(float probability)
     {
         Probability = probability;
-        WallColor = new Color(1.0f - Probability, Probability, 0.0f);
 
         if (Random.Range(0.0f, 1.0f) <= Probability)
         {
@@ -47,6 +48,22 @@ public class MazeWall : MonoBehaviour {
         else
         {
             IsPassable = false;
+        }
+
+        if (ColorizePassable)
+        {
+            if (!IsPassable)
+            {
+                WallColor = new Color(1.0f, 0.0f, 0.0f);
+            }
+            else
+            {
+                WallColor = new Color(0.0f, 1.0f, 0.0f);
+            }
+        }
+        else
+        {
+            WallColor = new Color(1.0f - Probability, Probability, 0.0f);
         }
     }
 }
