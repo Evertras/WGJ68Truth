@@ -14,20 +14,8 @@ public class MazeWall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Probability = Random.Range(0.0f, 1.0f);
-        WallColor = new Color(1.0f - Probability, Probability, 0.0f);
         Renderer = GetComponent<Renderer>();
         PropBlock = new MaterialPropertyBlock();
-
-        if (Random.Range(0.0f, 1.0f) <= Probability)
-        {
-            IsPassable = true;
-            GetComponent<BoxCollider>().enabled = false;
-        }
-        else
-        {
-            IsPassable = false;
-        }
 	}
 	
 	// Update is called once per frame
@@ -38,4 +26,27 @@ public class MazeWall : MonoBehaviour {
 
         Renderer.SetPropertyBlock(PropBlock);
 	}
+
+    public void ForcePassable(bool passable)
+    {
+        IsPassable = passable;
+
+        GetComponent<BoxCollider>().enabled = !IsPassable;
+    }
+
+    public void SetProbability(float probability)
+    {
+        Probability = probability;
+        WallColor = new Color(1.0f - Probability, Probability, 0.0f);
+
+        if (Random.Range(0.0f, 1.0f) <= Probability)
+        {
+            IsPassable = true;
+            GetComponent<BoxCollider>().enabled = false;
+        }
+        else
+        {
+            IsPassable = false;
+        }
+    }
 }
