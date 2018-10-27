@@ -5,6 +5,7 @@ using UnityEngine;
 public class MazeGenerator : MonoBehaviour {
     public GameObject Wall;
     public GameObject Pillar;
+    public GameObject Goal;
 
     public int Width = 5;
     public int Height = 5;
@@ -45,6 +46,15 @@ public class MazeGenerator : MonoBehaviour {
                 }
             }
         }
+
+        Instantiate(
+            Goal,
+            new Vector3(
+                CellSize * (Width - 2),
+                1.0f,
+                CellSize * (Height - 2)
+            ),
+            Quaternion.identity);
 	}
 
     private void SpawnWallBottom(int x, int z)
