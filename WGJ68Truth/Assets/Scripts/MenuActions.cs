@@ -8,4 +8,15 @@ public class MenuActions : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting");
+        Application.Quit();
+    }
 }
