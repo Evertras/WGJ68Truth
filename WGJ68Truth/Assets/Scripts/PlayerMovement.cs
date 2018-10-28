@@ -11,8 +11,13 @@ public class PlayerMovement : MonoBehaviour {
     public AudioSource footsteps;
 
     Vector3 movement = new Vector3();
-	
-	void Update () {
+
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
+    void Update () {
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
 
