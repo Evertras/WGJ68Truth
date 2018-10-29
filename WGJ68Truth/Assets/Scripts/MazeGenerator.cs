@@ -7,6 +7,7 @@ public class MazeGenerator : MonoBehaviour
     public GameObject Wall;
     public GameObject Pillar;
     public GameObject Goal;
+    public GameObject HotCold;
 
     public int Width = 5;
     public int Height = 5;
@@ -75,7 +76,7 @@ public class MazeGenerator : MonoBehaviour
             wall.SetProbability(Probability(passable));
         }
 
-        Instantiate(
+        var goal = Instantiate(
             Goal,
             new Vector3(
                 CellSize * (Width - 1),
@@ -83,6 +84,8 @@ public class MazeGenerator : MonoBehaviour
                 CellSize * (Height - 1)
             ),
             Quaternion.identity);
+
+        HotCold.GetComponent<ColdHotOrbit>().Goal = goal;
     }
 
     private float Probability(bool passable)

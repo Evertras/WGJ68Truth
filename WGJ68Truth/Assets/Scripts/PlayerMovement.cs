@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     public Animator animator;
     public float speed = 1.0f;
     public AudioSource footsteps;
+    public Joystick joystick;
 
     Vector3 movement = new Vector3();
 
@@ -18,8 +19,8 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update () {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.z = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxis("Horizontal") + joystick.Horizontal;
+        movement.z = Input.GetAxis("Vertical") + joystick.Vertical;
 
         if (movement.sqrMagnitude > 0)
         {
