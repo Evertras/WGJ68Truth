@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuActions : MonoBehaviour {
+    public void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void ExitToMainMenu()
     {
         SceneManager.LoadScene(0);

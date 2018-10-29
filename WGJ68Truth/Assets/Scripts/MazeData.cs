@@ -140,7 +140,9 @@ public static class KruskalMaze
         }
 
         // The basic Kruskal algorithm is looking for a minimum spanning tree, we're looking
-        // for an actual random maze, so we randomize the list before picking from it
+        // for an actual random maze, so we randomize the list before picking from it.  This
+        // gives us a maze where every square is reachable and there are no cycles, but the
+        // path to the end is hopefully far from optimized.
         allEdges.Shuffle();
 
         // For each edge in edges, check if it connects two disjointed sets... if yes,
