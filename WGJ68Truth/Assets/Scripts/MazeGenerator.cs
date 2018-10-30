@@ -8,6 +8,10 @@ public class MazeGenerator : MonoBehaviour
     public GameObject Pillar;
     public GameObject Goal;
     public GameObject HotCold;
+    public GameObject[] LandmarkProps;
+
+    [Range(0.0f, 1.0f)]
+    public float LandmarkChance = 0.5f;
 
     public int Width = 5;
     public int Height = 5;
@@ -53,6 +57,23 @@ public class MazeGenerator : MonoBehaviour
                     var wall = SpawnWallLeft(x, z);
                     wall.Passable = false;
                     wall.SetProbability(0.0f);
+                }
+
+                if (
+                    z != 0 &&
+                    x != Width - 1 &&
+                    LandmarkProps.Length > 0 &&
+                    Random.Range(0.0f, 1.0f) < LandmarkChance)
+                {
+                    int propIndex = Random.Range(0, LandmarkProps.Length);
+
+                    Instantiate(
+                        LandmarkProps[propIndex],
+                        new Vector3(
+                            pillar.transform.position.x + 1.5f,
+                            0.0f,
+                            pillar.transform.position.z - 1.5f),
+                        Quaternion.identity);
                 }
             }
         }

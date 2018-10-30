@@ -12,15 +12,37 @@ public class PlayerMovement : MonoBehaviour {
     public Joystick joystick;
 
     Vector3 movement = new Vector3();
+    Collider ground;
 
     private void Start()
     {
-        Cursor.visible = false;
+        ground = GameObject.FindGameObjectWithTag("Ground").GetComponent<Collider>();
     }
 
     void Update () {
-        movement.x = Input.GetAxis("Horizontal") + joystick.Horizontal;
-        movement.z = Input.GetAxis("Vertical") + joystick.Vertical;
+        if (joystick != null)
+        {
+            movement.x = joystick.Horizontal;
+            movement.z = joystick.Vertical;
+        }
+        else if (Input.touches.Length > 0)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+
+            RaycastHit hitInfo;
+            if (ground.Raycast(ray, out hitInfo, float.PositiveInfinity))
+            {
+                var direction = Vector3.ClampMagnitude(hitInfo.point - transform.position, 1.0f);
+
+                movement.x = direction.x;
+                movement.z = direction.z;
+            }
+        }
+        else
+        {
+            movement.x = Input.GetAxis("Horizontal");
+            movement.z = Input.GetAxis("Vertical");
+        }
 
         if (movement.sqrMagnitude > 0)
         {
