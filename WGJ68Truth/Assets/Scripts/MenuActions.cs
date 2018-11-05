@@ -11,12 +11,13 @@ public class MenuActions : MonoBehaviour {
 
     public void ExitToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 
-    public void Play()
+    public void Play(int size)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt("size", size);
+        SceneManager.LoadScene("Play");
     }
 
     public void QuitGame()

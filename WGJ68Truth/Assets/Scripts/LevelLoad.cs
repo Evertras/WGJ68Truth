@@ -9,4 +9,9 @@ public class LevelLoad : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void SuccessScreen()
+    {
+        SceneManager.LoadScene("Success");
+    }
 }

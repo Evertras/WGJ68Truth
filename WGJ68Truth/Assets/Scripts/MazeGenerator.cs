@@ -24,6 +24,9 @@ public class MazeGenerator : MonoBehaviour
 
     private void Start()
     {
+        Width = PlayerPrefs.GetInt("size", Width);
+        Height = PlayerPrefs.GetInt("size", Height);
+
         WallLength = CellSize - 3.0f;
         Offset = new Vector3(-CellSize * 0.5f, 0.0f, -CellSize * 0.5f);
 
