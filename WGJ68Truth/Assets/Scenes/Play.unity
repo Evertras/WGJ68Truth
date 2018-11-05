@@ -587,6 +587,26 @@ Prefab:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114500604229597674, guid: aa5e9dc85549dac43842a168c520c0f3,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500604229597674, guid: aa5e9dc85549dac43842a168c520c0f3,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500604229597674, guid: aa5e9dc85549dac43842a168c520c0f3,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500604229597674, guid: aa5e9dc85549dac43842a168c520c0f3,
+        type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 2436
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa5e9dc85549dac43842a168c520c0f3, type: 2}
   m_IsPrefabAsset: 0
@@ -635,7 +655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -96.8, y: 31.3}
+  m_AnchoredPosition: {x: -96.79999, y: 31.300049}
   m_SizeDelta: {x: 193.6, y: 62.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568649415
