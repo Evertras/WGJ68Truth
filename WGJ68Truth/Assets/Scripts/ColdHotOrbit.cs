@@ -26,7 +26,7 @@ public class ColdHotOrbit : MonoBehaviour {
         var playerToGoal = Goal.transform.position - Player.transform.position;
         var playerToSphere = transform.position - Player.transform.position;
 
-        float angle = Vector3.Angle(playerToGoal, playerToSphere);
+        float angle = Vector2.Angle(new Vector2(playerToGoal.x, playerToGoal.z), new Vector2(playerToSphere.x, playerToSphere.z));
 
         var value = 1.0f - Mathf.Clamp01(angle / 180.0f);
 
