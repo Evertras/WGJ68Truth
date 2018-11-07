@@ -1,21 +1,41 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Monetization;
 
 public class AdPlayer : MonoBehaviour {
-    public void Show()
+    public void ShowForZoom()
     {
-        ShowAdCallbacks options = new ShowAdCallbacks();
-
-        options.finishCallback = HandleResult;
-
-        ShowAdPlacementContent ad = Monetization.GetPlacementContent("rewardedVideo") as ShowAdPlacementContent;
-
-        ad.Show(options);
+        StartCoroutine(ShowWhenReady("rewardedVideo", ZoomBoost));
     }
 
-    void HandleResult(ShowResult result) {
-        Debug.Log(result);
+    public void ShowRegular(ShowAdFinishCallback cb = null)
+    {
+        StartCoroutine(ShowWhenReady("video", cb));
+    }
+
+    IEnumerator ShowWhenReady(string placementId, ShowAdFinishCallback cb)
+    {
+        while (!Monetization.IsReady(placementId))
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+
+        ShowAdCallbacks options = new ShowAdCallbacks();
+
+        if (cb != null)
+        {
+            options.finishCallback = cb;
+        }
+
+        ShowAdPlacementContent ad = Monetization.GetPlacementContent(placementId) as ShowAdPlacementContent;
+
+        if (ad != null)
+        {
+            ad.Show(options);
+        }
+    }
+
+    void ZoomBoost(ShowResult result) {
+        Debug.Log("Do zoom boost things");
     }
 }

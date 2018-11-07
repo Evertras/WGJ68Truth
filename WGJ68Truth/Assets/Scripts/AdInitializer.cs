@@ -2,7 +2,6 @@
 using UnityEngine.Monetization;
 
 public class AdInitializer : MonoBehaviour {
-
     public bool TestMode = true;
 
 #if UNITY_IOS
