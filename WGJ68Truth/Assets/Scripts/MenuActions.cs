@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 [RequireComponent(typeof(AdPlayer))]
 public class MenuActions : MonoBehaviour {
@@ -34,6 +35,8 @@ public class MenuActions : MonoBehaviour {
         }
 
         PlayerPrefs.SetInt("adCounter", adCounter);
+
+        AnalyticsEvent.LevelStart(size);
 
         SceneManager.LoadScene("Play");
     }
