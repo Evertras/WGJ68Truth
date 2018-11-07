@@ -11,3 +11,4 @@
 * [Fantasy Ambient Music Pack by Fabio di Santo](https://assetstore.unity.com/packages/audio/music/fantasy-ambient-music-pack-49863)
 * [Treasure Set - Free Chest by Fairy Shop](https://assetstore.unity.com/packages/3d/props/interior/treasure-set-free-chest-72345)
 * [Low Poly: Free Pack by Axeyworks](https://assetstore.unity.com/packages/3d/environments/low-poly-free-pack-58821)
+* [15 Original Bricks Textures by Nevlext](https://assetstore.unity.com/packages/2d/textures-materials/brick/15-original-bricks-textures-72427)

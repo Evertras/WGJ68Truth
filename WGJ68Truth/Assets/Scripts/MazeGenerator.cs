@@ -109,7 +109,10 @@ public class MazeGenerator : MonoBehaviour
             ),
             Quaternion.identity);
 
-        HotCold.GetComponent<ColdHotOrbit>().Goal = goal;
+        if (HotCold != null)
+        {
+            HotCold.GetComponent<ColdHotOrbit>().Goal = goal;
+        }
     }
 
     private float Probability(bool passable)
