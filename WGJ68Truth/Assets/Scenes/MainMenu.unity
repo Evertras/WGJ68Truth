@@ -1585,6 +1585,11 @@ Prefab:
       propertyPath: Height
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114868747984780782, guid: be44d704c97c7534db5a77d3e313e26b,
+        type: 2}
+      propertyPath: StaticSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be44d704c97c7534db5a77d3e313e26b, type: 2}
   m_IsPrefabAsset: 0

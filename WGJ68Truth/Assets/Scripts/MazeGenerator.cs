@@ -13,9 +13,11 @@ public class MazeGenerator : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float LandmarkChance = 0.5f;
 
+    public bool StaticSize = false;
     public int Width = 5;
     public int Height = 5;
     public float WallHeight = 2.0f;
+
     [Range(4, 20)]
     public int CellSize = 5;
 
@@ -24,8 +26,11 @@ public class MazeGenerator : MonoBehaviour
 
     private void Start()
     {
-        Width = PlayerPrefs.GetInt("size", Width);
-        Height = PlayerPrefs.GetInt("size", Height);
+        if (!StaticSize)
+        {
+            Width = PlayerPrefs.GetInt("size", Width);
+            Height = PlayerPrefs.GetInt("size", Height);
+        }
 
         WallLength = CellSize - 3.0f;
         Offset = new Vector3(-CellSize * 0.5f, 0.0f, -CellSize * 0.5f);
