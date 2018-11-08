@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
+// This has gotten way too big, worth refactoring?
 public class MazeGenerator : MonoBehaviour
 {
     public GameObject Wall;
@@ -9,6 +11,9 @@ public class MazeGenerator : MonoBehaviour
     public GameObject Goal;
     public GameObject HotCold;
     public GameObject[] LandmarkProps;
+
+    public PlayableDirector VictoryTimeline;
+    public Cinemachine.CinemachineVirtualCamera TreasureCamera;
 
     [Range(0.0f, 1.0f)]
     public float LandmarkChance = 0.5f;
@@ -117,6 +122,17 @@ public class MazeGenerator : MonoBehaviour
         if (HotCold != null)
         {
             HotCold.GetComponent<ColdHotOrbit>().Goal = goal;
+        }
+
+        if (TreasureCamera != null)
+        {
+            TreasureCamera.Follow = goal.transform;
+            TreasureCamera.LookAt = goal.transform;
+        }
+
+        if (VictoryTimeline != null)
+        {
+            goal.GetComponent<GoalGet>().Timeline = VictoryTimeline;
         }
     }
 
