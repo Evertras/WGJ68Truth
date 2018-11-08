@@ -906,6 +906,36 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 60.89
       objectReference: {fileID: 0}
+    - target: {fileID: 114189777201018176, guid: 30939a35b8746a04bb90b072bfd5b22f,
+        type: 2}
+      propertyPath: m_LookaheadSmoothing
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189777201018176, guid: 30939a35b8746a04bb90b072bfd5b22f,
+        type: 2}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189777201018176, guid: 30939a35b8746a04bb90b072bfd5b22f,
+        type: 2}
+      propertyPath: m_DeadZoneHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189777201018176, guid: 30939a35b8746a04bb90b072bfd5b22f,
+        type: 2}
+      propertyPath: m_ZDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189777201018176, guid: 30939a35b8746a04bb90b072bfd5b22f,
+        type: 2}
+      propertyPath: m_YDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189777201018176, guid: 30939a35b8746a04bb90b072bfd5b22f,
+        type: 2}
+      propertyPath: m_XDamping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30939a35b8746a04bb90b072bfd5b22f, type: 2}
   m_IsPrefabAsset: 0
