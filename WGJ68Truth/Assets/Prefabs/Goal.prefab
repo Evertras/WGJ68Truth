@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 222184248824819652}
   - component: {fileID: 114249298409929410}
   - component: {fileID: 95507446607712468}
-  - component: {fileID: 114053833611555648}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Fade
@@ -164,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206858714358026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.65}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224698237123346130}
@@ -413,17 +412,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotateSpeed: 30
   BobInterval: 1
---- !u!114 &114053833611555648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1119060355385902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6132b7e1fe961ac4cb8846f3d1b46a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114249298409929410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 1119060355385902}
   WinSound: {fileID: 82044512595359704}
+  Timeline: {fileID: 0}
 --- !u!114 &114851351828048664
 MonoBehaviour:
   m_ObjectHideFlags: 1
