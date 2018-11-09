@@ -27,9 +27,9 @@ public class MenuActions : MonoBehaviour {
 
         adCounter += size;
 
-        if (adCounter >= 20)
+        if (adCounter >= 40)
         {
-            adCounter -= 20;
+            adCounter -= 40;
 
             adPlayer.ShowRegular();
         }

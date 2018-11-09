@@ -31,6 +31,7 @@ public class HintUnlock : MonoBehaviour {
                 ZoomSlider.SetActive(true);
                 ZoomButton.interactable = false;
                 HideScreen();
+                PlayerPrefs.SetInt("adCounter", 0);
             }
         });
     }
