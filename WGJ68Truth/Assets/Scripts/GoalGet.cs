@@ -19,6 +19,10 @@ public class GoalGet : MonoBehaviour {
 
         StartCoroutine(FadeOut(3f));
 
+        var completedCount = PlayerPrefs.GetInt("completedCount", 0);
+
+        PlayerPrefs.SetInt("completedCount", completedCount + 1);
+
         AnalyticsEvent.LevelComplete(PlayerPrefs.GetInt("size", -1));
     }
 
@@ -27,6 +31,7 @@ public class GoalGet : MonoBehaviour {
         yield return new WaitForSeconds(time);
         Fade.SetActive(true);
         yield return new WaitForSeconds(1f);
+        
         SceneManager.LoadScene("MainMenu");
     }
 }

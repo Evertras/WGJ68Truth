@@ -68,8 +68,6 @@ public class MenuActions : MonoBehaviour {
         {
             LoadingBar.value = progress.progress;
 
-            Debug.Log(progress.progress);
-
             yield return null;
         }
     }
