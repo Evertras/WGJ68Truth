@@ -5,6 +5,7 @@ using UnityEngine;
 public class MazeWall : MonoBehaviour {
 
     public Material Material;
+    public GameObject PuffEffect;
 
     public bool ColorizePassable = false;
 
@@ -12,7 +13,7 @@ public class MazeWall : MonoBehaviour {
         get { return _passable; }
         set {
             _passable = value;
-            GetComponent<BoxCollider>().enabled = !_passable;
+            GetComponent<BoxCollider>().isTrigger = _passable;
 
             if (ColorizePassable)
             {
@@ -67,5 +68,15 @@ public class MazeWall : MonoBehaviour {
         {
             WallColor = new Color(Probability, Probability, Probability);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Instantiate(PuffEffect, other.ClosestPoint(transform.position) + transform.up, Quaternion.identity);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Instantiate(PuffEffect, other.ClosestPoint(transform.position) + transform.up, Quaternion.identity);
     }
 }

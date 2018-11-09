@@ -109,4 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 478ab7dd000ad6e448101303fd7df085, type: 2}
+  PuffEffect: {fileID: 1824678713817896, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
   ColorizePassable: 0

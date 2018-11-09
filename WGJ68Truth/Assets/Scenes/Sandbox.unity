@@ -536,6 +536,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4644819465680454, guid: 5bd9af97d3e7a4947b8968c2b4dcea15,
     type: 2}
   m_PrefabInternal: {fileID: 1112285939}
+--- !u!1001 &866782812
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292720666504020, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d60ba01762b5214b8ed1557f6df2b25, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &959785195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1092076054854784, guid: 5f12f5ee729291d4e9da1f91dbb7174b,
