@@ -5,12 +5,11 @@ using Cinemachine;
 
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class ZoomableCamera : MonoBehaviour {
-    private CinemachineVirtualCamera camera;
     private CinemachineFramingTransposer transposer;
 
 	// Use this for initialization
 	void Start () {
-        camera = GetComponent<CinemachineVirtualCamera>();
+        var camera = GetComponent<CinemachineVirtualCamera>();
         transposer = camera.GetCinemachineComponent<CinemachineFramingTransposer>();
 
         if (transposer == null)

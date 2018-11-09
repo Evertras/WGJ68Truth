@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.Monetization;
 
 public class AdPlayer : MonoBehaviour {
-    public void ShowForZoom()
+    public void ShowRewarded(ShowAdFinishCallback cb)
     {
-        StartCoroutine(ShowWhenReady("rewardedVideo", ZoomBoost));
+        StartCoroutine(ShowWhenReady("rewardedVideo", cb));
     }
 
     public void ShowRegular(ShowAdFinishCallback cb = null)
@@ -33,9 +33,5 @@ public class AdPlayer : MonoBehaviour {
         {
             ad.Show(options);
         }
-    }
-
-    void ZoomBoost(ShowResult result) {
-        Debug.Log("Do zoom boost things");
     }
 }
