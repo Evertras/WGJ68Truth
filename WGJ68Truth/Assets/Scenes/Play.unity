@@ -1150,11 +1150,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2213,11 +2213,11 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2678,7 +2678,13 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1509129200}
-    m_RemovedComponents: []
+    - target: {fileID: 23601797490075932, guid: a2ab40da3b16f024ea0f6b33ab1b99dc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135450586586029864, guid: a2ab40da3b16f024ea0f6b33ab1b99dc, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a2ab40da3b16f024ea0f6b33ab1b99dc, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2028026209 stripped
@@ -2725,7 +2731,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1075.5, y: 1909.5}
+  m_SizeDelta: {x: 2887, y: 3122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102975455
 MonoBehaviour:
@@ -2891,11 +2897,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
