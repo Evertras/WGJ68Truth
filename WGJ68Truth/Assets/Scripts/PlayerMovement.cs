@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 1.0f;
     public AudioSource footsteps;
     public Joystick joystick;
+    public GameObject treasureFinder;
 
     Vector3 movement = new Vector3();
     Collider ground;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update () {
+
         if (joystick != null)
         {
             movement.x = joystick.Horizontal;
@@ -65,5 +67,10 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate()
     {
         controller.Move(movement * Time.fixedDeltaTime * speed);
+    }
+
+    public void SpawnPathfinder()
+    {
+        Instantiate(treasureFinder, transform.position, Quaternion.identity);
     }
 }

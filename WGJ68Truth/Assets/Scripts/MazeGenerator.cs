@@ -11,6 +11,7 @@ public class MazeGenerator : MonoBehaviour
     public GameObject Goal;
     public GameObject HotCold;
     public GameObject[] LandmarkProps;
+    public UnityEngine.AI.NavMeshSurface NavMeshSurface;
 
     public PlayableDirector VictoryTimeline;
     public Cinemachine.CinemachineVirtualCamera TreasureCamera;
@@ -130,6 +131,11 @@ public class MazeGenerator : MonoBehaviour
         if (VictoryTimeline != null)
         {
             goal.GetComponent<GoalGet>().Timeline = VictoryTimeline;
+        }
+
+        if (NavMeshSurface != null)
+        {
+            NavMeshSurface.BuildNavMesh();
         }
     }
 

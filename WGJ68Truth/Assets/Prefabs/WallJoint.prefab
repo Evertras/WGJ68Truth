@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4506669073575572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33007040614078270}
   - component: {fileID: 23291425778764486}
   - component: {fileID: 65372553401733678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 33734794043657262}
   - component: {fileID: 23068145203937156}
   - component: {fileID: 65186061581060778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 33483981776056598}
   - component: {fileID: 23263770682993424}
   - component: {fileID: 65210327768532270}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

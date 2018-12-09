@@ -9,12 +9,16 @@ public class MazeWall : MonoBehaviour {
 
     public bool ColorizePassable = false;
 
+    private const int layerPassable = 0;
+    private const int layerImpassable = 10;
+
     public bool Passable {
         get { return _passable; }
         set {
             _passable = value;
             GetComponent<BoxCollider>().isTrigger = _passable;
             Colorize();
+            gameObject.layer = _passable ? layerPassable : layerImpassable;
         }
     }
 
