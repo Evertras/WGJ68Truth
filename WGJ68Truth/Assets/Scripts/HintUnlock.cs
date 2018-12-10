@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Monetization;
+using UnityEngine.Analytics;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(AdPlayer))]
 public class HintUnlock : MonoBehaviour {
@@ -36,6 +38,10 @@ public class HintUnlock : MonoBehaviour {
                 ZoomButton.interactable = false;
                 HideScreen();
                 PlayerPrefs.SetInt("adCounter", 0);
+
+                Analytics.CustomEvent("unlockZoom", new Dictionary<string, object> {
+                    { "size", PlayerPrefs.GetInt("size") }
+                });
             }
         });
     }
@@ -49,11 +55,18 @@ public class HintUnlock : MonoBehaviour {
 
         AdPlayer.ShowRewarded((ShowResult res) =>
         {
-            PathfindersUnlocked = true;
-            HideScreen();
-            PlayerPrefs.SetInt("adCounter", 0);
-            PathfinderButton.interactable = false;
-            PathfinderSpawner.SetActive(true);
+            if (res == ShowResult.Finished)
+            {
+                PathfindersUnlocked = true;
+                HideScreen();
+                PlayerPrefs.SetInt("adCounter", 0);
+                PathfinderButton.interactable = false;
+                PathfinderSpawner.SetActive(true);
+
+                Analytics.CustomEvent("unlockPathfinders", new Dictionary<string, object> {
+                    { "size", PlayerPrefs.GetInt("size") }
+                });
+            }
         });
     }
 
